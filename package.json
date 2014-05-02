@@ -2,6 +2,12 @@
   "name": "grunt-rquirejs",
   "description": "Micro RequireJS-like build system for modular JavaScript libraries.",
   "version": "0.1.0",
+  "files": [
+    "tasks",
+    "LICENSE-MIT",
+    "README.md"
+  ],
+  "readmeFilename": "README.md",
   "homepage": "https://github.com/acdvorak/grunt-rquirejs",
   "author": {
     "name": "Andrew C. Dvorak",
