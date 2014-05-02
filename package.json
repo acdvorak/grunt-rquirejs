@@ -1,5 +1,5 @@
 {
-  "name": "grunt-rquire",
+  "name": "grunt-rquirejs",
   "description": "Micro RequireJS-like build system for modular JavaScript libraries.",
   "version": "0.1.0",
   "homepage": "https://github.com/acdvorak/grunt-rquirejs",
