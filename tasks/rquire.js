@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
         config.user_modules = userModules ? userModules.split(/[,\s:;]+/g) : [];
         config.aliases = _.extend({}, config.aliases);
-        config.globals = _.extend({ '$': 'jQuery' }, config.globals);
+        config.globals = _.extend({}, config.globals);
 
         var done = this.async();
 
