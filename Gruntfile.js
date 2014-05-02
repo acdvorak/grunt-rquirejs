@@ -45,6 +45,16 @@ module.exports = function(grunt) {
                 files: {
                     'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
                 }
+            },
+            'D.js': {
+                options: {
+                    globals: {
+                        '_': '_'
+                    },
+                    src_root: '/Users/acdvorak/dev/libs/D.js/src',
+                    main: 'D.js',
+                    dest: '/Users/acdvorak/dev/libs/D.js/dist/D.js'
+                }
             }
         },
 
