@@ -35,10 +35,15 @@ module.exports = function(grunt) {
 
         var done = this.async();
 
-        rquire.compile(config, done);
+        rquire.compile(config, function() {
+            // Print a success message.
+            grunt.log.writeln('File "' + config.dest + '" created.');
+
+            done();
+        });
     });
 
-    grunt.registerMultiTask('rquire-example', 'Micro RequireJS-like build system for modular JavaScript libraries.', function() {
+    grunt.registerMultiTask('rquire-grunt-example', 'Micro RequireJS-like build system for modular JavaScript libraries.', function() {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             punctuation: '.',
