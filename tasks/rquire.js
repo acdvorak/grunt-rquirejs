@@ -11,7 +11,7 @@
 var _ = require('underscore')
   , path = require('path')
   , glob = require('glob')
-  , rquire = require('../../rquirejs')
+  , rquire = require('rquirejs')
 ;
 
 
