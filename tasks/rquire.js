@@ -8,9 +8,12 @@
 
 'use strict';
 
-var _ = require('underscore');
+var _ = require('underscore')
+  , path = require('path')
+  , glob = require('glob')
+  , rquire = require('../../rquirejs')
+;
 
-var rquire = require('../../rquirejs');
 
 module.exports = function(grunt) {
 
@@ -32,6 +35,12 @@ module.exports = function(grunt) {
         config.user_modules = userModules ? userModules.split(/[,\s:;]+/g) : [];
         config.aliases = _.extend({}, config.aliases);
         config.globals = _.extend({}, config.globals);
+
+        if (config.user_modules[0] === 'all') {
+            config.user_modules = glob.sync('**/*.js', {
+                cwd: path.resolve(config.src_root, config.modules_dir)
+            });
+        }
 
         var done = this.async();
 
