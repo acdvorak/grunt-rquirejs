@@ -51,9 +51,61 @@ module.exports = function(grunt) {
                     globals: {
                         '_': '_'
                     },
+                    aliases: {
+                        // All three path styles below are equivalent
+//                        'underscore': 'libs/underscore',
+//                        'overload': 'libs/overload.js',
+//                        'signal': '/libs/signal.js'
+                    },
                     src_root: '/Users/acdvorak/dev/libs/D.js/src',
                     main: 'D.js',
-                    dest: '/Users/acdvorak/dev/libs/D.js/dist/D.js'
+                    dest: '/Users/acdvorak/dev/libs/D.js/dist/D.js',
+                    safe_undefined: true,
+                    micro_paths: true
+                }
+            },
+            'example': {
+                options: {
+                    // Global variable mappings to expose to your library.
+                    // While this is technically optional, it is a good practice to be explicit
+                    // about the global dependencies your library expects.
+                    //
+                    // Key   = the variable name that will be seen and used by your library internally
+                    // Value = the actual name of the variable in the global scope
+                    globals: {
+                        'root': 'window',
+                        'window': 'window',
+                        'document': 'document',
+                        '_': '_',
+                        '$': 'window.Zepto || window.jQuery'
+                    },
+
+                    // Transforms require('alias-name') into require('/full/path/to/file.js') in the output.
+                    aliases: {
+                        'some-lib': '/long/path/to/some/lib.js',
+                        '/fake/path.js': '/real/path.js'
+                    },
+
+                    // All other paths are relative to this directory (EXCEPT `dest`!).
+                    // `src_root` itself is relative to the current working directory
+                    // of the Node process.
+                    src_root: 'src/',
+
+                    // The main entry point for your library.
+                    main: 'main.js',
+
+                    // Base directory containing user-selectable modules.
+                    modules_dir: 'modules/',
+
+                    // Path to the output JS file relative to the current working directory
+                    // of the Node process.
+                    dest: 'dist/my.js',
+
+                    // TODO: Document me
+                    safe_undefined: true,
+
+                    // TODO: Document me
+                    micro_paths: true
                 }
             }
         },
