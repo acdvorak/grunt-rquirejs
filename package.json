@@ -1,7 +1,7 @@
 {
   "name": "grunt-rquirejs",
   "description": "Micro RequireJS-like build system for modular JavaScript libraries.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "files": [
     "tasks",
     "LICENSE-MIT",
@@ -49,6 +49,6 @@
     "grunt": "^0.4.4",
     "underscore": "^1.6.0",
     "glob": "^3.2.9",
-    "rquirejs": "^0.1.4"
+    "rquirejs": "^0.1.5"
   }
 }
