@@ -61,7 +61,8 @@ module.exports = function(grunt) {
                     main: 'D.js',
                     dest: '/Users/acdvorak/dev/libs/D.js/dist/D.js',
                     safe_undefined: true,
-                    micro_paths: true
+                    micro_paths: true,
+                    universal: 'D'
                 }
             },
             'example': {
@@ -105,7 +106,10 @@ module.exports = function(grunt) {
                     safe_undefined: true,
 
                     // TODO: Document me
-                    micro_paths: true
+                    micro_paths: true,
+
+                    // TODO: Document me
+                    universal: 'myGlobalPropertyNameForWebBrowsers'
                 }
             }
         },
